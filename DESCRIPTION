@@ -1,0 +1,12 @@
+Package: mjml
+Title: Create Responsive Emails
+Version: 0.0.0.9000
+Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
+Description: Create responsive emails with 'MJML'.
+Depends: R (>= 3.4.3)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    htmltools
+RoxygenNote: 6.0.1
