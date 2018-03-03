@@ -44,5 +44,5 @@ mj_social <- function(display, ...){
 mj_image <- function(src, ...){
   if(missing(src))
     stop("missing src")
-  htmltools::tag("mj-divider", list(src = src, ...))
+  htmltools::tag("mj-image", list(src = src, ...))
 }

@@ -66,12 +66,19 @@ mj_include <- function(...){
 #'   mj_body(
 #'     mj_container(
 #'       mj_section(
-#'         mj_column("First column"),
-#'         mj_column("Second column")
+#'         mj_column(
+#'           mj_text("First column")
+#'         ),
+#'         mj_column(
+#'           mj_text("Second column")
+#'         )
 #'       ),
 #'       mj_section(
-#'         mj_chart(
-#'           chd = "t:10,20,30|15,25,35"
+#'         mj_column(
+#'           mj_image(paste0("https://media.vanityfair.com/photos/",
+#'                           "54cbf3da998d4de83ba3602a/master/w_960,",
+#'                           "c_limit/image.jpg")
+#'                    )
 #'         )
 #'       )
 #'     )
