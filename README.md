@@ -14,7 +14,7 @@ devtools::install_github("JohnCoene/mjml")
 
 Install [MJML](https://mjml.io/).
 
-```{r}
+```bash
 # Install with npm in a folder where you will use MJML
 $> npm install mjml
 
