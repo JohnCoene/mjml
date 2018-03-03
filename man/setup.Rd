@@ -5,7 +5,7 @@
 \alias{mj_head}
 \alias{mj_body}
 \alias{mj_include}
-\title{MJML}
+\title{Standard components}
 \usage{
 mj_ml(...)
 
@@ -21,10 +21,24 @@ mj_include(...)
 \description{
 Core components of an MJML email.
 }
+\section{Functions}{
+
+\itemize{
+  \item{\code{mj_ml} }{Core parent, equivalent to \code{<html></html>}.}
+  \item{\code{mj_head} }{Contains everything related to the document such as style and meta elements.}
+  \item{\code{mj_body} }{Contains everything related to the content of your email..}
+  \item{\code{mj_include} }{This tag allows you to include external files.}
+}
+}
+
 \examples{
 mj_ml(
-  mj_head("header"),
-  mj_body("footer")
+  mj_head(
+    mj_text("The header")
+  ),
+  mj_body(
+    mj_text("The body")
+  )
 )
 
 }

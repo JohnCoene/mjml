@@ -2,7 +2,7 @@
 % Please edit documentation in R/icon.R
 \name{mj_social}
 \alias{mj_social}
-\title{Add icons}
+\title{Icons}
 \usage{
 mj_social(display, ...)
 }

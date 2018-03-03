@@ -2,7 +2,7 @@
 % Please edit documentation in R/column.R
 \name{mj_column}
 \alias{mj_column}
-\title{Create columns}
+\title{Layout}
 \usage{
 mj_column(...)
 }
@@ -10,11 +10,42 @@ mj_column(...)
 \item{...}{Unnamed items that comprise this list of MJML tags.}
 }
 \description{
-Create up to 4 columns.
+Create colmns, sections and containers.
 }
+\section{Function}{
+
+\itemize{
+  \item{\code{mj_section} }{Horizontal sections.}
+  \item{\code{mj_container} }{Standard container.}
+  \item{\code{mj_column} }{Column, up to four.}
+}
+}
+
 \examples{
 mj_ml(
-  mj_body("")
+  mj_body(
+    mj_container(
+      mj_section(
+        mj_column(
+          mj_text("First Column")
+        ),
+        mj_column(
+          mj_text("Second Column")
+        )
+      ),
+      mj_section(
+        mj_column(
+          mj_text("First Column")
+        ),
+        mj_column(
+          mj_text("Second Column")
+        ),
+        mj_column(
+          mj_text("Third Column")
+        )
+      )
+    )
+  )
 )
 
 }
