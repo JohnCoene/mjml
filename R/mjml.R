@@ -51,8 +51,15 @@ mj_include <- function(...){
 #' Save your email with \code{.mjml} extension.
 #'
 #' @param mjml MJML email as returned by \code{\link{mj_ml}}.
-#' @param file File name of output.
-#' @param ... Any other option to be passed to \code{\link{write}}.
+#' @param input,output input and output files.
+#' @param ... Any other option to be passed to \code{\link{writeLines}}.
+#'
+#' @section Functions:
+#' \itemize{
+#'   \item{\code{mj_save} }{Save as \code{.mjml}}
+#'   \item{\code{mj_validate} }{Validate \code{.mjml} file}
+#'   \item{\code{mj_convert} }{Convert \code{.mjml} to \code{.html}}
+#' }
 #'
 #' @examples
 #' mj_ml(
@@ -70,11 +77,31 @@ mj_include <- function(...){
 #'     )
 #'   )
 #' ) %>%
-#'   mj_save("email.mjml")
+#'   mj_save("email.mjml") %>% # save as .mjml
+#'   mj_validate() %>% # validate
+#'   mj_convert("email.html") # save as .html
 #'
+#' @rdname save
 #' @export
-mj_save <- function(mjml, file, ...){
-  fileConn <- file(file)
+mj_save <- function(mjml, output, ...){
+  fileConn <- file(output)
   writeLines(as.character(mjml), fileConn)
   close(fileConn)
+  output
+}
+
+#' @rdname save
+#' @export
+mj_validate <- function(input){
+  arguments <- paste("--validate", input)
+  system2("mjml", args = arguments)
+  input
+}
+
+#' @rdname save
+#' @export
+mj_convert <- function(input, output){
+  arguments <- paste(input, "--output", output)
+  system2("mjml", args = arguments)
+  output
 }
