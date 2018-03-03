@@ -1,0 +1,13 @@
+<mjml>
+  <mj-body>
+    <mj-container>
+      <mj-section>
+        <mj-column>First column</mj-column>
+        <mj-column>Second column</mj-column>
+      </mj-section>
+      <mj-section>
+        <mj-chart cht="bvg" chd="t:10,20,30|15,25,35"></mj-chart>
+      </mj-section>
+    </mj-container>
+  </mj-body>
+</mjml>

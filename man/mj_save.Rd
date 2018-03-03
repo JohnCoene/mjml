@@ -11,8 +11,27 @@ mj_save(mjml, file, ...)
 
 \item{file}{File name of output.}
 
-\item{...}{Any other option to be passed to \link[htmltools]{save_html}.}
+\item{...}{Any other option to be passed to \code{\link{write}}.}
 }
 \description{
-Save your email.
+Save your email with \code{.mjml} extension.
+}
+\examples{
+mj_ml(
+  mj_body(
+    mj_container(
+      mj_section(
+        mj_column("First column"),
+        mj_column("Second column")
+      ),
+      mj_section(
+        mj_chart(
+          chd = "t:10,20,30|15,25,35"
+        )
+      )
+    )
+  )
+) \%>\%
+  mj_save("email.mjml")
+
 }
