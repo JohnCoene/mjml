@@ -45,3 +45,16 @@ mj_body <- function(...){
 mj_include <- function(...){
   htmltools::tag("mj-include", list(...))
 }
+
+#' Save
+#'
+#' Save your email.
+#'
+#' @param mjml MJML email as returned by \code{\link{mj_ml}}.
+#' @param file File name of output.
+#' @param ... Any other option to be passed to \link[htmltools]{save_html}.
+#'
+#' @export
+mj_save <- function(mjml, file, ...){
+  htmltools::save_html(mjml, file = file, ...)
+}
