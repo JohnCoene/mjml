@@ -64,3 +64,32 @@ mj_title <- function(...){
 mj_style <- function(...){
   htmltools::tag("mj-style", list(...))
 }
+
+
+#' Font
+#'
+#' This tag allows you to import fonts if used in your MJML document.
+#'
+#' @param href URL of the font.
+#' @param name Name of the font.
+#'
+#' @examples
+#' mj_ml(
+#'  mj_head(
+#'    mj_font(
+#'      href = "https://fonts.googleapis.com/css?family=Raleway",
+#'      name = "Raleway"
+#'    )
+#'  ),
+#'  mj_body(
+#'     mj_text(
+#'       `font-family` = "Raleway, Arial",
+#'       "Blue text"
+#'     )
+#'   )
+#' )
+#'
+#' @export
+mj_font <- function(href, name){
+  htmltools::tag("mj-font", list(href = href, name = name))
+}
