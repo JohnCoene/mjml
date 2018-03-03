@@ -2,7 +2,7 @@
 % Please edit documentation in R/icon.R
 \name{mj_image}
 \alias{mj_image}
-\title{Images}
+\title{Image}
 \usage{
 mj_image(src, ...)
 }
@@ -12,7 +12,8 @@ mj_image(src, ...)
 \item{...}{Unnamed items that comprise this list of MJML tags.}
 }
 \description{
-Add a images.
+Displays a responsive image in your email. It is similar to the HTML
+\code{<img/>} tag. Note that if no width is provided, the image will use the parent column width.
 }
 \examples{
 mj_ml(
@@ -22,4 +23,7 @@ mj_ml(
   )
 )
 
+}
+\seealso{
+\href{official documentation}{https://mjml.io/documentation/#mjml-image}
 }

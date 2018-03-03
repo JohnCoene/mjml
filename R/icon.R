@@ -1,6 +1,7 @@
-#' Icons
+#' Social
 #'
-#' Add icons.
+#' Displays calls-to-action for various social networks with their associated logo.
+#' You can activate/deactivate any icon, with \code{display} property.
 #'
 #' @inheritParams mj_ml
 #' @param display icon to display.
@@ -12,6 +13,8 @@
 #'   )
 #' )
 #'
+#' @seealso \href{official documentation}{https://mjml.io/documentation/#mjml-social}
+#'
 #' @export
 mj_social <- function(display, ...){
   if(missing(display))
@@ -19,9 +22,10 @@ mj_social <- function(display, ...){
   htmltools::tag("mj-social", list(display = display, ...))
 }
 
-#' Images
+#' Image
 #'
-#' Add a images.
+#' Displays a responsive image in your email. It is similar to the HTML
+#' \code{<img/>} tag. Note that if no width is provided, the image will use the parent column width.
 #'
 #' @inheritParams mj_ml
 #' @param src image source.
@@ -33,6 +37,8 @@ mj_social <- function(display, ...){
 #'                     "54cbf3da998d4de83ba3602a/master/w_960,c_limit/image.jpg"))
 #'   )
 #' )
+#'
+#' @seealso \href{official documentation}{https://mjml.io/documentation/#mjml-image}
 #'
 #' @export
 mj_image <- function(src, ...){

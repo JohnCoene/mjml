@@ -2,7 +2,7 @@
 % Please edit documentation in R/icon.R
 \name{mj_social}
 \alias{mj_social}
-\title{Icons}
+\title{Social}
 \usage{
 mj_social(display, ...)
 }
@@ -12,7 +12,8 @@ mj_social(display, ...)
 \item{...}{Unnamed items that comprise this list of MJML tags.}
 }
 \description{
-Add icons.
+Displays calls-to-action for various social networks with their associated logo.
+You can activate/deactivate any icon, with \code{display} property.
 }
 \examples{
 mj_ml(
@@ -21,4 +22,7 @@ mj_ml(
   )
 )
 
+}
+\seealso{
+\href{official documentation}{https://mjml.io/documentation/#mjml-social}
 }
