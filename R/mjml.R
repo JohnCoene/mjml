@@ -81,6 +81,8 @@ mj_include <- function(...){
 #'   mj_validate() %>% # validate
 #'   mj_convert("email.html") # save as .html
 #'
+#' @seealso \href{official documentation}{https://mjml.io/documentation/#command-line-interface}
+#'
 #' @rdname save
 #' @export
 mj_save <- function(mjml, output, ...){
