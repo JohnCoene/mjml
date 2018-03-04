@@ -58,9 +58,7 @@ mj_ml(
     )
   )
 ) \%>\%
-  mj_save_mjml("email") \%>\% # save as .mjml
-  mj_validate_mjml() \%>\% # validate
-  mj_convert_html("email") # save as .html
+  mj_save("email")
 
 }
 \seealso{

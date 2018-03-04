@@ -85,9 +85,7 @@ mj_include <- function(...){
 #'     )
 #'   )
 #' ) %>%
-#'   mj_save_mjml("email") %>% # save as .mjml
-#'   mj_validate_mjml() %>% # validate
-#'   mj_convert_html("email") # save as .html
+#'   mj_save("email")
 #'
 #' @seealso \href{official documentation}{https://mjml.io/documentation/#command-line-interface}
 #'
@@ -119,6 +117,7 @@ mj_validate_mjml <- function(input){
 mj_convert_html <- function(input, output){
   if(missing(input) || missing(output))
     stop("missing input or output")
+  output <- paste0(output, ".html")
   arguments <- paste(input, "--output", output)
   system2("mjml", args = arguments)
   output
