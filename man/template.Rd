@@ -2,9 +2,12 @@
 % Please edit documentation in R/template.R
 \name{mj_allura}
 \alias{mj_allura}
+\alias{mj_hny}
 \title{Template}
 \usage{
 mj_allura()
+
+mj_hny()
 }
 \description{
 Responsive email templates.
@@ -13,6 +16,7 @@ Responsive email templates.
 
 \itemize{
   \item{\code{mj_allura} {\href{Allura template}{https://mjml.io/try-it-live/templates/black-friday}}}
+  \item{\code{mj_hny} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/happy-new-year}}}
 }
 }
 
