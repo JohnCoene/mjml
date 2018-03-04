@@ -1,9 +1,14 @@
 Name: Allura template
 Description: Inserts allura template at the cursor position.
-Binding: mj_allura
+Binding: mj_template_allura
 Interactive: false
 
 Name: Happy New Year template
 Description: Inserts happy new year template at the cursor position.
-Binding: mj_hny
+Binding: mj_template_hny
+Interactive: false
+
+Name: Card template
+Description: Inserts card template at the cursor position.
+Binding: mj_template_card
 Interactive: false

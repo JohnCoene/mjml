@@ -4,13 +4,14 @@
 #'
 #' @section Templates:
 #' \itemize{
-#'   \item{\code{mj_allura} {\href{Allura template}{https://mjml.io/try-it-live/templates/black-friday}}}
-#'   \item{\code{mj_hny} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/happy-new-year}}}
+#'   \item{\code{mj_template_allura} {\href{Allura template}{https://mjml.io/try-it-live/templates/black-friday}}}
+#'   \item{\code{mj_template_hny} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/happy-new-year}}}
+#'   \item{\code{mj_template_card} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/card}}}
 #' }
 #'
 #' @rdname template
 #' @export
-mj_allura <- function(){
+mj_template_allura <- function(){
 
   '
   mj_ml(
@@ -169,7 +170,7 @@ mj_allura <- function(){
 
 #' @rdname template
 #' @export
-mj_hny <- function(){
+mj_template_hny <- function(){
   '
   mj_ml(
     version = "3.3.3",
@@ -283,6 +284,187 @@ mj_hny <- function(){
               `line-height` = "22px",
               padding = "0px 20px",
               "[[DELIVERY_INFO]]"
+            )
+          )
+        )
+      )
+    )
+  )' -> template
+
+  rstudioapi::insertText(template)
+}
+
+#' @rdname template
+#' @export
+mj_template_card <- function(){
+
+  '
+  mj_ml(
+
+    mj_head(
+      mj_title("Say hello to card"),
+      mj_font(
+        name = "Roboto",
+        href = "https://fonts.googleapis.com/css?family=Montserrat:300,400,500"
+      ),
+      mj_attributes(
+        mj_all(`font-family` = "Montserrat, Helvetica, Arial, sans-serif"),
+        mj_text(`font-weight` = "400", `font-size` = "16", color = "#000000", `line-height` = "24px"),
+        mj_section(padding = 0)
+      )
+    ),
+
+    mj_body(
+      mj_container(
+        `background-color` = "#F2F2F2",
+        mj_section(
+          padding = "10px 0 20px 0",
+          mj_column(
+            mj_text(
+              align = "center",
+              color = "#9B9B9B",
+              `font-size` = "11px",
+              "Writing A Good Headline For Your Advertisement"
+            )
+          )
+        ),
+        mj_section(
+          padding = "20px 20px 0 20px",
+          `background-color` = "#FFFFFF",
+          mj_column(
+            width = "35%",
+            mj_text(
+              align = "left",
+              `font-size` = "20",
+              `font-weight` = "500",
+              "// BR&amp;AND"
+            )
+          ),
+          mj_column(
+            width = "65%",
+            mj_text(
+              align = "right",
+              `font-size` = "11",
+              htmltools::a(
+                href = "#",
+                style = "color: #000000; text-decoration: none;",
+                "HOME"
+              ),
+              "&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;",
+              htmltools::a(
+                href = "#",
+                style = "color: #000000; text-decoration: none;",
+                "SERVICE"
+              ),
+              "&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;",
+              htmltools::a(
+                href = "#",
+                style = "color: #000000; text-decoration: none;",
+                "THIRD"
+              )
+            )
+          )
+        ),
+        mj_section(
+          padding = "20px 20px 0 20px",
+          `background-color` = "#FFFFFF",
+          mj_column(
+            mj_text(
+              align = "center",
+              `font-weight` = "300",
+              padding = "30px 40px 10px 40px",
+              `font-size` = "32px",
+              `line-height` = "40x",
+              color = "#5FA91D",
+              "Free Advertising For Your Online Business."
+            )
+          )
+        ),
+        mj_section(
+          padding = "10px 20px",
+          `background-color` = "#FFFFFF",
+          mj_column(
+            mj_divider(width = "30px", `border-width` = "3px", `border-color` = "#9B9B9B")
+          )
+        ),
+        mj_section(
+          padding = "0 20px 20px 20px",
+          `background-color` = "#FFFFFF",
+          mj_column(
+            width = "80%",
+            mj_text(
+              align = "center", `padding-top` = "10px", `font-weight` = "500", padding = "0",
+              "A Right Media Mix Can Make The Difference."
+            )
+          )
+        ),
+        mj_section(
+          `background-url` = "http://nimus.de/share/tpl-card/bg.jpg",
+          `vertical-align` = "middle",
+          `background-size` = "cover",
+          `background-repeat` = "no-repeat",
+          mj_column(
+            width = "100%",
+            mj_image(
+              src = "http://nimus.de/share/tpl-card/lineshadow.png",
+              alt = "",
+              align = "center",
+              border = "none",
+              padding = "0"
+            ),
+            mj_text(
+              align = "center", padding = "50px 40px 0 40px", `font-weight` = "300", padding = "0",
+              paste("Marketers/advertisers usually focus their efforts on the people responsible for making the purchase.",
+                    "In many cases, this is an effective approach but in other cases it can make for a totally useless",
+                    "marketing campaign.")
+            ),
+            mj_button(
+              align = "center",
+              `background-color` = "#5FA91D",
+              color = "#FFFFFF",
+              `border-radius` = "2px",
+              href = "#",
+              `inner-padding` = "15px 30px",
+              `padding-bottom` = "100",
+              `padding-top` = "20",
+              "CALL TO ACTION"
+            )
+          )
+        ),
+        mj_section(
+          padding = "50px 0 0 0",
+          `background-color` = "#FFFFFF",
+          mj_column(
+            mj_image(
+              src = "http://nimus.de/share/tpl-card/bottom.png",
+              alt = "bottom border",
+              align = "center",
+              border = "none",
+              padding = "0"
+            )
+          )
+        ),
+        mj_section(
+          padding = "10px 0 20px 0",
+          mj_column(
+            mj_text(
+              align = "center",
+              color = "#9B9B9B",
+              `font-size` = "11px",
+              htmltools::a(
+                href = "#",
+                style = "color: #9B9B9B;",
+                "Unsubscribe"
+              ),
+              "from this newsletter",
+              htmltools::br(),
+              "52 Edison Court Suite 259 / East Aidabury / Cambodi",
+              htmltools::br(),
+              htmltools::a(
+                href = "#",
+                style = "color: #9B9B9B; text-decoration:none;",
+                "Made by svenhaustein.de"
+              )
             )
           )
         )
