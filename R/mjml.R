@@ -67,6 +67,8 @@ mj_include <- function(...){
 #' }
 #'
 #' @examples
+#' mj_set("./node_modules/.bin/mjml")
+#'
 #' mj_ml(
 #'   mj_body(
 #'     mj_container(
@@ -89,7 +91,7 @@ mj_include <- function(...){
 #'     )
 #'   )
 #' ) %>%
-#'   mj_save("email")
+#'   mj_save("email.html")
 #'
 #' @return Path to \code{output}.
 #'
@@ -100,7 +102,6 @@ mj_include <- function(...){
 mj_save_mjml <- function(mjml, output, ...){
   if(missing(mjml) || missing(output))
     stop("missing mjml or output")
-  output <- paste0(output, ".mjml")
   fileConn <- file(output)
   writeLines(as.character(mjml), fileConn)
   close(fileConn)
@@ -112,9 +113,8 @@ mj_save_mjml <- function(mjml, output, ...){
 mj_validate_mjml <- function(input){
   if(missing(input))
     stop("missing input")
-  input <- paste0(input, ".html")
   arguments <- paste("--validate", input)
-  system2("mjml", args = arguments)
+  system2(Sys.getenv("MJML"), args = arguments)
   input
 }
 
@@ -123,9 +123,8 @@ mj_validate_mjml <- function(input){
 mj_convert_html <- function(input, output){
   if(missing(input) || missing(output))
     stop("missing input or output")
-  output <- paste0(output, ".html")
   arguments <- paste(input, "--output", output)
-  system2("mjml", args = arguments)
+  system2(Sys.getenv("MJML"), args = arguments)
   output
 }
 
@@ -134,9 +133,31 @@ mj_convert_html <- function(input, output){
 mj_save <- function(mjml, output, ...){
   if(missing(mjml) || missing(output))
     stop("missing mjml or output")
-  temp_mjml <- tempfile(fileext = "")
+  temp_mjml <- tempfile(fileext = ".mjml")
   out <- mj_save_mjml(mjml, temp_mjml)
   output <- mj_convert_html(out, output)
   unlink("temp_mjml", recursive = TRUE)
   output
+}
+
+#' Setup
+#'
+#' Set path to MJML.
+#'
+#' @param path Path to MJML.
+#'
+#' @examples
+#' mj_set("./node_modules/.bin")
+#' mj_get()
+#'
+#' @rdname set
+#' @export
+mj_set <- function(path){
+  Sys.setenv("MJML" = path)
+}
+
+#' @rdname set
+#' @export
+mj_get <- function(){
+  Sys.getenv("MJML")
 }

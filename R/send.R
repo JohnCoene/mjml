@@ -44,7 +44,7 @@
 #'     )
 #'   )
 #' ) %>%
-#'   mj_save("email") %>%
+#'   mj_save("email.html") %>%
 #'   mj_send_html("me@@gmail.com", "him@@gmail.com", "MJML email",
 #'                smtp = list(host.name = "smtp.gmail.com",
 #'                            port = 465,
@@ -76,7 +76,7 @@ mj_send_html <- function(email, from, to, subject, html = TRUE, inline = FALSE, 
 #' @export
 mj_send <- function(mjml, from, to, subject, html = TRUE, inline = TRUE, authenticate = TRUE,
                     send = TRUE, ...){
-  temp_mjml <- tempfile(fileext = "")
+  temp_mjml <- tempfile(fileext = ".mjml")
   out_mjml <- mj_save_mjml(mjml, temp_mjml)
 
   temp_html <- tempfile(fileext = ".html")

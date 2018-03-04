@@ -39,6 +39,8 @@ Save your email with \code{.mjml} extension.
 }
 
 \examples{
+mj_set("./node_modules/.bin")
+
 mj_ml(
   mj_body(
     mj_container(
@@ -61,7 +63,7 @@ mj_ml(
     )
   )
 ) \%>\%
-  mj_save("email")
+  mj_save("email.html")
 
 }
 \seealso{

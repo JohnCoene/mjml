@@ -67,7 +67,7 @@ mj_ml(
     )
   )
 ) \%>\%
-  mj_save("email") \%>\%
+  mj_save("email.html") \%>\%
   mj_send_html("me@gmail.com", "him@gmail.com", "MJML email",
                smtp = list(host.name = "smtp.gmail.com",
                            port = 465,

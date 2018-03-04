@@ -24,12 +24,12 @@ $> npm install mjml
 
 # In the folder where you installed MJML you can now run:
 $> ./node_modules/.bin/mjml -V
+```
 
-# To avoid typing ./node_modules/.bin/, add it to your PATH (add it to .bashrc or .zshrc so you don't have to export it anymore):
-$> export PATH="$PATH:./node_modules/.bin"
+Optionally install [image chart](https://github.com/image-charts/mjml-chart) to use `ml_chart`.
 
-# You can now run MJML directly, in that folder:
-$> mjml -V
+```bash
+$> npm install mjml-chart --save
 ```
 
 ## Templates
@@ -44,6 +44,8 @@ Inserts templates with RStudio addins.
 
 ```{r}
 library(mjml)
+
+mj_set("./node_modules/.bin/mjml") # path to MJML
 
 # create email
 mj_ml(
@@ -63,8 +65,17 @@ mj_ml(
         )
       ),
       mj_section(
-        mj_image(paste0("https://media.vanityfair.com/photos/",
-                        "54cbf3da998d4de83ba3602a/master/w_960,c_limit/image.jpg")
+        mj_column(
+          mj_image(paste0("https://media.vanityfair.com/photos/",
+                          "54cbf3da998d4de83ba3602a/master/w_960,c_limit/image.jpg")
+          )
+        )
+      ),
+      mj_section(
+        mj_column(
+          mj_chart(
+            chd = "t:10,20,30|15,25,35"
+          )
         )
       )
     )
