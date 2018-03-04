@@ -5,7 +5,7 @@
 \alias{mj_send}
 \title{Send}
 \usage{
-mj_send_html(email, from, to, subject, html = TRUE, inline = TRUE,
+mj_send_html(email, from, to, subject, html = TRUE, inline = FALSE,
   authenticate = TRUE, send = TRUE, ...)
 
 mj_send(mjml, from, to, subject, html = TRUE, inline = TRUE,
@@ -69,8 +69,6 @@ mj_ml(
 ) \%>\%
   mj_save("email") \%>\%
   mj_send_html("me@gmail.com", "him@gmail.com", "MJML email",
-               authenticate = TRUE,
-               send= TRUE,
                smtp = list(host.name = "smtp.gmail.com",
                            port = 465,
                            user.name = "gmail_username",

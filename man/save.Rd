@@ -23,7 +23,7 @@ mj_save(mjml, output, ...)
 \item{input, output}{input and output files.}
 }
 \value{
-path to \code{output}.
+Path to \code{output}.
 }
 \description{
 Save your email with \code{.mjml} extension.

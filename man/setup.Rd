@@ -33,11 +33,15 @@ Core components of an MJML email.
 
 \examples{
 mj_ml(
-  mj_head(
-    mj_text("The header")
-  ),
   mj_body(
-    mj_text("The body")
+    mj_column(
+      width = "20\%",
+      mj_text("First columns")
+    ),
+    mj_column(
+      width = "80\%",
+      mj_text("The body")
+    )
   )
 )
 
