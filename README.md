@@ -39,6 +39,7 @@ Inserts templates with RStudio addins.
 * `Allura`
 * `Happy New Year`
 * `Card`
+* `Proof`
 
 ## Example
 
