@@ -7,6 +7,7 @@
 #'   \item{\code{mj_template_allura} {\href{Allura template}{https://mjml.io/try-it-live/templates/black-friday}}}
 #'   \item{\code{mj_template_hny} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/happy-new-year}}}
 #'   \item{\code{mj_template_card} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/card}}}
+#'   \item{\code{mj_template_proof} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/proof}}}
 #' }
 #'
 #' @rdname template
@@ -472,5 +473,145 @@ mj_template_card <- function(){
     )
   )' -> template
 
+  rstudioapi::insertText(template)
+}
+
+#' @rdname template
+#' @export
+mj_template_proof <- function(){
+
+  '
+  mj_ml(
+    mj_body(
+      mj_container(
+        mj_section(
+          mj_column(
+            mj_image(
+              width = "162", src = "http://i.imgur.com/6wwIX3R.png"
+            )
+          )
+        ),
+        mj_section(
+          `background-color` = "#f3f3f3",
+          mj_column(
+            mj_image(
+              width = "170", src = "http://i.imgur.com/nwNZ0TW.png"
+            )
+          ),
+          mj_column(
+            mj_text(
+              `font-weight` = "bold",
+              align = "justify",
+              `font-size` = "24px",
+              color = "#000",
+              `font-family` = "helvetica",
+              "Article Title"
+            ),
+            mj_text(
+              align = "justify",
+              `font-size` = "15px",
+              color = "#000",
+              `font-family` = "helvetica",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet ipsum consequat."
+            ),
+            mj_button(
+              align = "justify",
+              `background-color` = "#8ccaca",
+              `border-radius` = "40px",
+              `font-family` = "helvetica",
+              `font-size` = "12px",
+              "READ MORE"
+            )
+          )
+        ),
+        mj_section(
+          mj_column(
+            mj_image(
+              width = "165",
+              src = "http://i.imgur.com/2aRBc7u.png"
+            ),
+            mj_text(
+              `font-weight` = "bold",
+              align = "center",
+              `font-size` = "16px",
+              color = "#000",
+              `font-family` = "helvetica",
+              "Article Title"
+            ),
+            mj_text(
+              align = "justify",
+              `font-size` = "13px",
+              color = "#000",
+              `font-family` = "helvetica",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            ),
+            mj_button(
+              `background-color` = "#8ccaca",
+              `border-radius` = "40px",
+              `font-family` = "helvetica",
+              `font-size` = "12px",
+              "READ MORE"
+            )
+          ),
+          mj_column(
+            mj_image(
+              width = "165",
+              src = "http://i.imgur.com/L7Q88fd.png"
+            ),
+            mj_text(
+              `font-weight` = "bold",
+              align = "center",
+              `font-size` = "16px",
+              color = "#000",
+              `font-family` = "helvetica",
+              "Article Title"
+            ),
+            mj_text(
+              align = "justify",
+              `font-size` = "13px",
+              color = "#000",
+              `font-family` = "helvetica",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            ),
+            mj_button(
+              `background-color` = "#8ccaca",
+              `border-radius` = "40px",
+              `font-family` = "helvetica",
+              `font-size` = "12px",
+              "READ MORE"
+            )
+          ),
+          mj_column(
+            mj_image(
+              width = "165",
+              src = "http://i.imgur.com/0NBMznR.png"
+            ),
+            mj_text(
+              `font-weight` = "bold",
+              align = "center",
+              `font-size` = "16px",
+              color = "#000",
+              `font-family` = "helvetica",
+              "Article Title"
+            ),
+            mj_text(
+              align = "justify",
+              `font-size` = "13px",
+              color = "#000",
+              `font-family` = "helvetica",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            ),
+            mj_button(
+              `background-color` = "#8ccaca",
+              `border-radius` = "40px",
+              `font-family` = "helvetica",
+              `font-size` = "12px",
+              "READ MORE"
+            )
+          )
+        )
+      )
+    )
+  )' -> template
   rstudioapi::insertText(template)
 }

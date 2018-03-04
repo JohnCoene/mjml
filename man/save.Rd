@@ -39,7 +39,7 @@ Save your email with \code{.mjml} extension.
 }
 
 \examples{
-mj_set("./node_modules/.bin")
+mj_set("./node_modules/.bin/mjml")
 
 mj_ml(
   mj_body(
