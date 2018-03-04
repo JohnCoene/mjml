@@ -58,17 +58,18 @@ mj_ml(
       mj_section(
         mj_column(
           width = "20%",
-          mj_text("First columns")
+          mj_text("First column")
         ),
         mj_column(
           width = "80%",
-          mj_text("The body")
+          mj_text("Second column")
         )
       ),
       mj_section(
         mj_column(
           mj_image(paste0("https://media.vanityfair.com/photos/",
-                          "54cbf3da998d4de83ba3602a/master/w_960,c_limit/image.jpg")
+                          "54cbf3da998d4de83ba3602a/master/w_960,",
+                          "c_limit/image.jpg")
           )
         )
       ),
