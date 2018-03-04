@@ -76,14 +76,11 @@ mj_send_html <- function(email, from, to, subject, html = TRUE, inline = FALSE, 
 #' @export
 mj_send <- function(mjml, from, to, subject, html = TRUE, inline = TRUE, authenticate = TRUE,
                     send = TRUE, ...){
-  temp_mjml <- tempfile(fileext = ".mjml")
-  out_mjml <- mj_save_mjml(mjml, temp_mjml)
 
   temp_html <- tempfile(fileext = ".html")
-  out_html <- mj_convert_html(out_mjml, temp_html)
-  unlink("temp_mjml", recursive = TRUE)
+  out_html <- mj_save(mjml, temp_html)
 
-  mj_send_html(out_html, from, to, subject, html, inline, authenticate,
+  mj_send_html(temp_html, from, to, subject, html, inline, authenticate,
                send, ...)
   unlink("temp_html", recursive = TRUE)
 }
