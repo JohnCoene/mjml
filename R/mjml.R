@@ -56,9 +56,10 @@ mj_include <- function(...){
 #'
 #' @section Functions:
 #' \itemize{
-#'   \item{\code{mj_save} }{Save as \code{.mjml}}
-#'   \item{\code{mj_validate} }{Validate \code{.mjml} file}
-#'   \item{\code{mj_convert} }{Convert \code{.mjml} to \code{.html}}
+#'   \item{\code{mj_save_mjml} }{Save as \code{.mjml}}
+#'   \item{\code{mj_validate_mjml} }{Validate \code{.mjml} file}
+#'   \item{\code{mj_convert_html} }{Convert \code{.mjml} file to \code{.html}}
+#'   \item{\code{mj_save} }{All of the above, outputs \code{.html}}
 #' }
 #'
 #' @examples
@@ -84,15 +85,18 @@ mj_include <- function(...){
 #'     )
 #'   )
 #' ) %>%
-#'   mj_save("email.mjml") %>% # save as .mjml
-#'   mj_validate() %>% # validate
-#'   mj_convert("email.html") # save as .html
+#'   mj_save_mjml("email") %>% # save as .mjml
+#'   mj_validate_mjml() %>% # validate
+#'   mj_convert_html("email") # save as .html
 #'
 #' @seealso \href{official documentation}{https://mjml.io/documentation/#command-line-interface}
 #'
 #' @rdname save
 #' @export
-mj_save <- function(mjml, output, ...){
+mj_save_mjml <- function(mjml, output, ...){
+  if(missing(mjml) || missing(output))
+    stop("missing mjml or output")
+  output <- paste0(output, ".mjml")
   fileConn <- file(output)
   writeLines(as.character(mjml), fileConn)
   close(fileConn)
@@ -101,7 +105,10 @@ mj_save <- function(mjml, output, ...){
 
 #' @rdname save
 #' @export
-mj_validate <- function(input){
+mj_validate_mjml <- function(input){
+  if(missing(input))
+    stop("missing input")
+  input <- paste0(input, ".html")
   arguments <- paste("--validate", input)
   system2("mjml", args = arguments)
   input
@@ -109,8 +116,21 @@ mj_validate <- function(input){
 
 #' @rdname save
 #' @export
-mj_convert <- function(input, output){
+mj_convert_html <- function(input, output){
+  if(missing(input) || missing(output))
+    stop("missing input or output")
   arguments <- paste(input, "--output", output)
   system2("mjml", args = arguments)
   output
+}
+
+#' @rdname save
+#' @export
+mj_save <- function(mjml, output, ...){
+  if(missing(mjml) || missing(output))
+    stop("missing mjml or output")
+  temp_mjml <- tempfile(fileext = ".mjml")
+  out <- mj_save_mjml(mjml, temp_mjml)
+  mj_convert_html(out, output)
+  unlink("temp_mjml", recursive = TRUE) # delete temp once unzipped
 }

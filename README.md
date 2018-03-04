@@ -28,8 +28,3 @@ $> export PATH="$PATH:./node_modules/.bin"
 $> mjml -V
 ```
 
-Verify from R.
-
-```r
-Sys.getenv("PATH")
-```
