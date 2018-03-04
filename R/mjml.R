@@ -87,6 +87,8 @@ mj_include <- function(...){
 #' ) %>%
 #'   mj_save("email")
 #'
+#' @return Path to \code{output}.
+#'
 #' @seealso \href{official documentation}{https://mjml.io/documentation/#command-line-interface}
 #'
 #' @rdname save
@@ -128,8 +130,9 @@ mj_convert_html <- function(input, output){
 mj_save <- function(mjml, output, ...){
   if(missing(mjml) || missing(output))
     stop("missing mjml or output")
-  temp_mjml <- tempfile(fileext = ".mjml")
+  temp_mjml <- tempfile(fileext = "")
   out <- mj_save_mjml(mjml, temp_mjml)
-  mj_convert_html(out, output)
-  unlink("temp_mjml", recursive = TRUE) # delete temp once unzipped
+  output <- mj_convert_html(out, output)
+  unlink("temp_mjml", recursive = TRUE)
+  output
 }

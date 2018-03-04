@@ -11,5 +11,6 @@ Imports:
     htmltools,
     knitr,
     magrittr,
-    rstudioapi
+    rstudioapi,
+    mailR
 RoxygenNote: 6.0.1

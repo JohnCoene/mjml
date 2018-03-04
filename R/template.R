@@ -337,7 +337,7 @@ mj_template_card <- function(){
               align = "left",
               `font-size` = "20",
               `font-weight` = "500",
-              "// BR&amp;AND"
+              "// BR&AND"
             )
           ),
           mj_column(
