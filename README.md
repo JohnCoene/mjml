@@ -31,7 +31,5 @@ $> mjml -V
 Verify from R.
 
 ```r
-system("mjml -V")
-mjml-core: 4.0.0
-mjml-cli: 4.0.0
+Sys.getenv("PATH")
 ```

@@ -1,0 +1,4 @@
+Name: Allura template
+Description: Inserts allura template at the cursor position.
+Binding: mj_allura
+Interactive: false

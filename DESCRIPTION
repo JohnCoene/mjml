@@ -10,5 +10,6 @@ LazyData: true
 Imports: 
     htmltools,
     knitr,
-    magrittr
+    magrittr,
+    rstudioapi
 RoxygenNote: 6.0.1
