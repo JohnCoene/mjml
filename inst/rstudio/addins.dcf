@@ -17,3 +17,8 @@ Name: Proof template
 Description: Inserts proof template at the cursor position.
 Binding: mj_template_proof
 Interactive: false
+
+Name: Basic email skeleton
+Description: Inserts basic email skeleton at the cursor position.
+Binding: mj_template_skeleton
+Interactive: false

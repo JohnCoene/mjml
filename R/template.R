@@ -4,6 +4,7 @@
 #'
 #' @section Templates:
 #' \itemize{
+#'   \item{\code{mj_template_skeleton} }{Basic email skeleton}
 #'   \item{\code{mj_template_allura} {\href{Allura template}{https://mjml.io/try-it-live/templates/black-friday}}}
 #'   \item{\code{mj_template_hny} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/happy-new-year}}}
 #'   \item{\code{mj_template_card} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/card}}}
@@ -613,5 +614,38 @@ mj_template_proof <- function(){
       )
     )
   )' -> template
+  rstudioapi::insertText(template)
+}
+
+#' @rdname template
+#' @export
+mj_template_skeleton <- function(){
+
+  '
+  mj_ml(
+    mj_head(
+      mj_preview("PREVIEW"),
+      mj_title("TITLE"),
+      mj_font(
+        href = "https://fonts.googleapis.com/css?family=Raleway",
+        name = "Railway"
+      )
+    ),
+    mj_body(
+      mj_container(
+        mj_section(
+          mj_column(
+            "FIRST SECTION"
+          )
+        ),
+        mj_section(
+          mj_column(
+            "SECOND SECTION"
+          )
+        )
+      )
+    )
+  )' -> template
+
   rstudioapi::insertText(template)
 }
