@@ -11,6 +11,8 @@
 #'   \item{\code{mj_template_proof} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/proof}}}
 #' }
 #'
+#' @seealso \href{official templates}{https://mjml.io/templates}
+#'
 #' @rdname template
 #' @export
 mj_template_allura <- function(){

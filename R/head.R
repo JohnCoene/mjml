@@ -11,6 +11,8 @@
 #'   )
 #' )
 #'
+#' @seealso \href{official documentation}{https://mjml.io/documentation/#mjml-preview}
+#'
 #' @export
 mj_preview <- function(...){
   htmltools::tag("mj-preview", list(...))
@@ -28,6 +30,8 @@ mj_preview <- function(...){
 #'     mj_title("Hello MJML")
 #'   )
 #' )
+#'
+#' @seealso \href{official documentation}{https://mjml.io/documentation/#mjml-title}
 #'
 #' @export
 mj_title <- function(...){
@@ -60,6 +64,8 @@ mj_title <- function(...){
 #'   )
 #' )
 #'
+#' @seealso \href{official documentation}{https://mjml.io/documentation/#mjml-style}
+#'
 #' @export
 mj_style <- function(...){
   htmltools::tag("mj-style", list(...))
@@ -90,6 +96,9 @@ mj_style <- function(...){
 #'     )
 #'   )
 #' )
+#'
+#' @seealso \href{official documentation}{https://mjml.io/documentation/#mjml-font},
+#' \href{Google Fonts}{https://fonts.google.com/}
 #'
 #' @rdname font
 #' @export

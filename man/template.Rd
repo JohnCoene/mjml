@@ -32,3 +32,6 @@ Responsive email templates.
 }
 }
 
+\seealso{
+\href{official templates}{https://mjml.io/templates}
+}

@@ -35,6 +35,8 @@
 #'   )
 #' )
 #'
+#' @seealso \href{official documentation}{https://mjml.io/documentation/#mjml-attributes}
+#'
 #' @rdname attributes
 #' @export
 mj_attributes <- function(...){
