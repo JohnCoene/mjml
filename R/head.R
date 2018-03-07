@@ -73,6 +73,8 @@ mj_style <- function(...){
 #' @param href URL of the font.
 #' @param name Name of the font.
 #'
+#' @details Use \code{mj_font_google} for \href{Google Fonts}{https://fonts.google.com/}.
+#'
 #' @examples
 #' mj_ml(
 #'  mj_head(
@@ -89,7 +91,15 @@ mj_style <- function(...){
 #'   )
 #' )
 #'
+#' @rdname font
 #' @export
 mj_font <- function(href, name){
+  htmltools::tag("mj-font", list(href = href, name = name))
+}
+
+#' @rdname font
+#' @export
+mj_font_google <- function(name){
+  href <- gf(name)
   htmltools::tag("mj-font", list(href = href, name = name))
 }

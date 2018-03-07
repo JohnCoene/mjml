@@ -2,9 +2,12 @@
 % Please edit documentation in R/head.R
 \name{mj_font}
 \alias{mj_font}
+\alias{mj_font_google}
 \title{Font}
 \usage{
 mj_font(href, name)
+
+mj_font_google(name)
 }
 \arguments{
 \item{href}{URL of the font.}
@@ -13,6 +16,9 @@ mj_font(href, name)
 }
 \description{
 This tag allows you to import fonts if used in your MJML document.
+}
+\details{
+Use \code{mj_font_google} for \href{Google Fonts}{https://fonts.google.com/}.
 }
 \examples{
 mj_ml(
