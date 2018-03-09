@@ -22,3 +22,8 @@ Name: Basic email skeleton
 Description: Inserts basic email skeleton at the cursor position.
 Binding: mj_template_skeleton
 Interactive: false
+
+Name: Droids template
+Description: Inserts droids template at the cursor position.
+Binding: mj_template_droids
+Interactive: false

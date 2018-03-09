@@ -8,7 +8,8 @@
 #'   \item{\code{mj_template_allura} {\href{Allura template}{https://mjml.io/try-it-live/templates/black-friday}}}
 #'   \item{\code{mj_template_hny} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/happy-new-year}}}
 #'   \item{\code{mj_template_card} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/card}}}
-#'   \item{\code{mj_template_proof} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/proof}}}
+#'   \item{\code{mj_template_proof} {\href{Proof template}{https://mjml.io/try-it-live/templates/proof}}}
+#'   \item{\code{mj_template_droids} {\href{Droids template}{https://mjml.io/try-it-live/templates/sphero-droids}}}
 #' }
 #'
 #' @seealso \href{official templates}{https://mjml.io/templates}
@@ -643,6 +644,204 @@ mj_template_skeleton <- function(){
         mj_section(
           mj_column(
             "SECOND SECTION"
+          )
+        )
+      )
+    )
+  )' -> template
+
+  rstudioapi::insertText(template)
+}
+
+#' @rdname template
+#' @export
+mj_template_droids <- function(){
+
+  '
+  mj_ml(
+    mj_head(
+      mj_title("These are the Droids you\'re looking for")
+    ),
+    mj_body(
+      mj_container(
+        mj_section(
+          `background-color` = "#000000",
+          padding = "0",
+          mj_column(
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_REAL_Hero.jpg",
+              alt = "These Are The Droids You\'re Looking For",
+              href = "https://www.youtube.com/sphero",
+              width = "600",
+              padding = "0"
+            )
+          )
+        ),
+        mj_section(
+          `background-color` = "#000000",
+          padding-top = "10",
+          mj_column(
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_features.jpg",
+              alt = "Featuring Authentic Movement, Holographic Simulation, Droid to Droid Experience, and Watch With Me",
+              width = "600",
+              padding = "0"
+            )
+          )
+        ),
+        mj_section(
+          `background-color` = "#000000",
+          `background-url` = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1.r2BG.jpg",
+          `background-repeat` = "no-repeat",
+          `padding-top` = "80",
+          `padding-bottom` = "0",
+          `padding-left` = "20",
+          width = "600",
+          mj_column(
+            mj_spacer(height = "15px"),
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_R2text.png",
+              width = "196",
+              alt = "Buy R2D2",
+              href = "https://www.sphero.com/starwars/r2d2"
+            ),
+            mj_text(
+              `font-size` = "14",
+              `line-height` = "2",
+              align = "left",
+              color = "#ffffff",
+              `font-family` = "Helvetica Neue",
+              "This is the Droid you\'re looking for. R2-D2 is an Astromech Droid in the Rebel Alliance from a galaxy far, far away.... The specialized tech in R2-D2 is unlike any other Astromech Droid, making it as authentic as the trusty Artoo you\'ve come to know and love."
+            ),
+            mj_spacer(height = "5px"),
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_R2_button.png",
+              width = "129",
+              alt = "Buy R2-D2",
+              href = "https://store.sphero.com/products/r2-d2"
+            )
+          ),
+          mj_column(
+            mj_spacer(height = "45px"),
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_R2-D2.png",
+              href = "https://www.sphero.com/starwars/r2d2",
+              alt = "Get the new R2-D2",
+              width = "310",
+              padding = "0"
+            )
+          )
+        ),
+        mj_section(
+          `background-color` = "#000000",
+          `background-url` = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1REDbg.jpg",
+          `background-repeat` = "no-repeat",
+          `padding-top` = "30",
+          `padding-left` = "20",
+          width = "600",
+          mj_column(
+            mj_spacer(height = "37px"),
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_BB-9E-text.png",
+              width = "196",
+              alt = "Buy BB-9E",
+              href = "https://www.sphero.com/starwars/bb9e"
+            ),
+            mj_text(
+              `font-size` = "14",
+              align = "left",
+              color = "#ffffff",
+              `line-height` = "2",
+              `font-family` = "Helvetica Neue",
+              "There\'s a new disturbance in the Force. BB-9E is a menacing Astromech Droid of the First Order. This vigilant and intimidating Droid is always on high alert. This is NOT the Droid you\'re looking for... it\'s the Droid that\'s looking for you."
+            ),
+            mj_spacer(height = "30px"),
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_BB-9E-button.png",
+              width = "129",
+              alt = "Buy BB-9E",
+              href = "https://store.sphero.com/products/bb-9e"
+            )
+          ),
+          mj_column(
+            mj_spacer(height = "60px"),
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_bb9e.png",
+              href = "https://www.sphero.com/starwars/bb9e",
+              alt = "Get the new BB-9E",
+              width = "310",
+              padding = "0"
+            )
+          )
+        ),
+        mj_section(
+          `background-color` = "#000000",
+          `background-url` = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_OrangeBG.jpg",
+          `background-repeat` = "no-repeat",
+          `padding-top` = "0",
+          `padding-left` = "20",
+          width = "600",
+          mj_column(
+            mj_spacer(height = "85px"),
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_bb8-text.png",
+              width = "196",
+              alt = "Buy BB-8",
+              href = "https://www.sphero.com/starwars/bb8"
+            ),
+            mj_text(
+              `font-size` = "14",
+              align = "left",
+              color = "#ffffff",
+              `line-height` = "2",
+              `font-family` = "Helvetica Neue",
+              "Orange and white. One of a kind. BB-8 is the loyal Astromech Droid of Resistance pilot Poe Dameron. The specially designed technology in this unique BB unit makes it invaluable to the Resistance. This Droid is full of features and will stop
+            at nothing to complete its mission."
+            ),
+            mj_spacer(height = "50px"),
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_bb8-button.png",
+              width = "129",
+              alt = "Buy BB-8",
+              href = "https://store.sphero.com/products/bb-8-with-trainer"
+            )
+          ),
+          mj_column(
+            mj_spacer(height = "60px"),
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/Star_Wars_Launch_Email_1_bb8.png",
+              href = "https://www.sphero.com/starwars/bb8",
+              alt = "Get the new BB-8",
+              width = "155",
+              padding = "0"
+            )
+          )
+        ),
+        mj_section(
+          `background-color` = "#424143",
+          `padding-right` = "10",
+          `padding-top` = "0",
+          `padding-bottom` = "0",
+          mj_column(
+            width = "33.33333333333333%"
+          ),
+          mj_column(
+            width = "33.33333333333333%",
+            mj_image(
+              src = "https://dmmedia.sphero.com/email-marketing/Star-Wars/sphero-logo-bottom-gray.png",
+              href = "https://www.sphero.com",
+              width = "134",
+              align = "center"
+            )
+          ),
+          mj_column(
+            width = "33.33333333333333%",
+            mj_text(
+              align = "center",
+              color = "#ffffff",
+              `font-size` = "8",
+              "&copy; & &trade; Lucasfilm Ltd."
+            )
           )
         )
       )

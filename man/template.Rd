@@ -6,6 +6,7 @@
 \alias{mj_template_card}
 \alias{mj_template_proof}
 \alias{mj_template_skeleton}
+\alias{mj_template_droids}
 \title{Template}
 \usage{
 mj_template_allura()
@@ -17,6 +18,8 @@ mj_template_card()
 mj_template_proof()
 
 mj_template_skeleton()
+
+mj_template_droids()
 }
 \description{
 Responsive email templates.
@@ -28,7 +31,8 @@ Responsive email templates.
   \item{\code{mj_template_allura} {\href{Allura template}{https://mjml.io/try-it-live/templates/black-friday}}}
   \item{\code{mj_template_hny} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/happy-new-year}}}
   \item{\code{mj_template_card} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/card}}}
-  \item{\code{mj_template_proof} {\href{Happy New Year template}{https://mjml.io/try-it-live/templates/proof}}}
+  \item{\code{mj_template_proof} {\href{Proof template}{https://mjml.io/try-it-live/templates/proof}}}
+  \item{\code{mj_template_droids} {\href{Droids template}{https://mjml.io/try-it-live/templates/sphero-droids}}}
 }
 }
 
