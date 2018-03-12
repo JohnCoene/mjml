@@ -6,6 +6,7 @@ Easily create responsive emails with [MJML](https://mjml.io/).
 
 * [Install](#install)
 * [Templates](#templates)
+* [Documentation](http://john-coene.com/mjml)
 * [Example](#example)
 
 ## Install
@@ -26,6 +27,12 @@ $> npm install mjml
 $> ./node_modules/.bin/mjml -V
 ```
 
+Pint to mjml from R.
+
+```R
+mj_set("./node_modules/.bin/mjml")
+```
+
 Optionally install [image chart](https://github.com/image-charts/mjml-chart) to use `ml_chart`.
 
 ```bash
@@ -34,16 +41,17 @@ $> npm install mjml-chart --save
 
 ## Templates
 
-Inserts templates with RStudio addins.
+Inserts templates with RStudio addin.
 
 * `Allura`
 * `Happy New Year`
 * `Card`
 * `Proof`
+* `Droids`
 
 ## Example
 
-```{r}
+```r
 library(mjml)
 
 mj_set("./node_modules/.bin/mjml") # path to MJML
