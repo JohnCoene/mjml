@@ -44,7 +44,7 @@ See installation.
 library(mjml)
 
 # create email
-mj_ml(
+email <- mj_ml(
   mj_head(
     mj_preview("Preview text")
   ),
@@ -74,4 +74,6 @@ mj_ml(
     )
   )
 ) 
+
+mj_save(email, "email.html")
 ```
