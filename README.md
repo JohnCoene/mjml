@@ -18,7 +18,7 @@ Install the package.
 remotes::install_github("JohnCoene/mjml")
 ```
 
-Installs [MJML](https://mjml.io/) _globally_
+Installs [MJML](https://mjml.io/) _globally_, this should only be run once on your machine.
 
 ```r
 library(mjml)
@@ -67,27 +67,8 @@ mj_ml(
                           "c_limit/image.jpg")
           )
         )
-      ),
-      mj_section(
-        mj_column(
-          mj_chart(
-            chd = "t:10,20,30|15,25,35"
-          )
-        )
       )
     )
   )
-) %>% 
-  mj_send(
-    "me@gmail.com", 
-    "him@gmail.com",
-    "MJML Email",
-    smtp = list(
-      host.name = "smtp.gmail.com", 
-      port = 465, 
-      user.name = "me", 
-      passwd = "pwd", 
-      ssl = TRUE
-    )
-  )
+) 
 ```
