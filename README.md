@@ -4,44 +4,31 @@
 
 Easily create responsive emails with [MJML](https://mjml.io/).
 
-* [Install](#install)
-* [Templates](#templates)
-* [Documentation](http://john-coene.com/mjml)
-* [Example](#example)
+- [mjml](#mjml)
+	- [Install](#install)
+	- [Templates](#templates)
+	- [Example](#example)
 
 ## Install
 
 Install the package.
 
 ``` r
-devtools::install_github("JohnCoene/mjml")
+# install.packages("remotes")
+remotes::install_github("JohnCoene/mjml")
 ```
 
-Install [MJML](https://mjml.io/).
+Installs [MJML](https://mjml.io/) _globally_
 
-```bash
-# Install with npm in a folder where you will use MJML
-$> npm install mjml
+```r
+library(mjml)
 
-# In the folder where you installed MJML you can now run:
-$> ./node_modules/.bin/mjml -V
-```
-
-Pint to mjml from R.
-
-```R
-mj_set("./node_modules/.bin/mjml")
-```
-
-Optionally install [image chart](https://github.com/image-charts/mjml-chart) to use `ml_chart`.
-
-```bash
-$> npm install mjml-chart --save
+install_mjml()
 ```
 
 ## Templates
 
-Inserts templates with RStudio addin.
+Insert templates with RStudio addin.
 
 * `Allura`
 * `Happy New Year`
@@ -51,10 +38,10 @@ Inserts templates with RStudio addin.
 
 ## Example
 
+See installation.
+
 ```r
 library(mjml)
-
-mj_set("./node_modules/.bin/mjml") # path to MJML
 
 # create email
 mj_ml(

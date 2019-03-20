@@ -147,8 +147,9 @@ mj_save <- function(mjml, output, ...){
 #' @param path Path to MJML.
 #'
 #' @examples
-#' mj_set("./node_modules/.bin")
-#' mj_get()
+#' \dontrun{
+#' install_mjml()
+#' }
 #'
 #' @rdname set
 #' @export
@@ -160,4 +161,10 @@ mj_set <- function(path){
 #' @export
 mj_get <- function(){
   Sys.getenv("MJML")
+}
+
+#' @rdname set
+#' @export
+install_mjml <- function(){
+	system2("npm", args = "install mjml --global")
 }

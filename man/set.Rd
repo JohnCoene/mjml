@@ -3,11 +3,14 @@
 \name{mj_set}
 \alias{mj_set}
 \alias{mj_get}
+\alias{install_mjml}
 \title{Setup}
 \usage{
 mj_set(path)
 
 mj_get()
+
+install_mjml()
 }
 \arguments{
 \item{path}{Path to MJML.}
@@ -16,7 +19,8 @@ mj_get()
 Set path to MJML.
 }
 \examples{
-mj_set("./node_modules/.bin")
-mj_get()
+\dontrun{
+install_mjml()
+}
 
 }
