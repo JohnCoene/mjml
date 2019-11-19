@@ -64,16 +64,14 @@ email <- mj_ml(
         mj_column(
           mj_image(
 						paste0(
-							"https://media.vanityfair.com/photos/",
-              "54cbf3da998d4de83ba3602a/master/w_960,",
-              "c_limit/image.jpg"
+							"https://www.r-project.org/Rlogo.png"
 						)
           )
         )
       )
     )
   )
-) 
+)
 
 # save the email
 mj_save(email, "email.html")
@@ -89,12 +87,12 @@ msg <- mime_part(message)
 msg[["headers"]][["Content-Type"]] <- "text/html"
 
 sendmail(
-  from = "jean-philippe.coene@weforum.org",
-  to = c("jean-philippe.coene@weforum.org"),
+  from = "jcoenep@gmail.com",
+  to = "jcoenep@gmail.com",
   subject = "testing", 
   msg = msg,
   control = list(
-    smtpServer = "mail.weforum.org"
+    smtpServer = "mail.google.com"
   )
 )
 ```
