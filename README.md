@@ -94,7 +94,7 @@ sendmail(
   subject = "testing", 
   msg = msg,
   control = list(
-    smtpServer="mail.weforum.org"
+    smtpServer = "mail.weforum.org"
   )
 )
 ```
