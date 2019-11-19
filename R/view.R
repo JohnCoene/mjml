@@ -32,5 +32,10 @@ mj_view <- function(mjml){
   output <- mj_convert_html(out, temp_html)
   unlink("temp_mjml", recursive = TRUE)
   viewer <- getOption("viewer")
+  if(is.null(rstudioapi::isAvailable())){
+    cat("RStudio not running")
+    return()
+  }
+  
   rstudioapi::viewer(output)
 }

@@ -9,11 +9,11 @@
 \usage{
 mj_save_mjml(mjml, output, ...)
 
-mj_validate_mjml(input)
+mj_validate_mjml(input, path = NULL)
 
-mj_convert_html(input, output)
+mj_convert_html(input, output, path = NULL)
 
-mj_save(mjml, output, ...)
+mj_save(mjml, output, ..., path = NULL)
 }
 \arguments{
 \item{mjml}{MJML email as returned by \code{\link{mj_ml}}.}
@@ -21,6 +21,9 @@ mj_save(mjml, output, ...)
 \item{...}{Any other option to be passed to \code{\link{writeLines}}.}
 
 \item{input, output}{input and output files.}
+
+\item{path}{Path to mjml installation, if \code{NULL} attempts to find
+the path with \code{\link{find_mjml}}.}
 }
 \value{
 Path to \code{output}.
@@ -39,8 +42,6 @@ Save your email with \code{.mjml} extension.
 }
 
 \examples{
-mj_set("./node_modules/.bin/mjml")
-
 mj_ml(
   mj_body(
     mj_container(

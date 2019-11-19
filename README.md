@@ -75,5 +75,26 @@ email <- mj_ml(
   )
 ) 
 
+# save the email
 mj_save(email, "email.html")
+```
+
+Send email with [sendmailR](https://CRAN.R-project.org/package=sendmailR).
+
+```r
+library(sendmailR)
+
+message <- readLines("email.html")
+msg <- mime_part(message)
+msg[["headers"]][["Content-Type"]] <- "text/html"
+
+sendmail(
+  from = "jean-philippe.coene@weforum.org",
+  to = c("jean-philippe.coene@weforum.org"),
+  subject = "testing", 
+  msg = msg,
+  control = list(
+    smtpServer="mail.weforum.org"
+  )
+)
 ```

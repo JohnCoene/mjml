@@ -57,6 +57,8 @@ mj_include <- function(...){
 #' @param mjml MJML email as returned by \code{\link{mj_ml}}.
 #' @param input,output input and output files.
 #' @param ... Any other option to be passed to \code{\link{writeLines}}.
+#' @param path Path to mjml installation, if \code{NULL} attempts to find
+#' the path with \code{\link{find_mjml}}.
 #'
 #' @section Functions:
 #' \itemize{
@@ -67,8 +69,6 @@ mj_include <- function(...){
 #' }
 #'
 #' @examples
-#' mj_set("./node_modules/.bin/mjml")
-#'
 #' mj_ml(
 #'   mj_body(
 #'     mj_container(
@@ -110,41 +110,48 @@ mj_save_mjml <- function(mjml, output, ...){
 
 #' @rdname save
 #' @export
-mj_validate_mjml <- function(input){
+mj_validate_mjml <- function(input, path = NULL){
   if(missing(input))
     stop("missing input")
+
+  if(is.null(path))
+    path <- find_mjml()
   arguments <- paste("--validate", input)
-  system2(Sys.getenv("MJML"), args = arguments)
+  system2(path, args = arguments)
   input
 }
 
 #' @rdname save
 #' @export
-mj_convert_html <- function(input, output){
+mj_convert_html <- function(input, output, path = NULL){
   if(missing(input) || missing(output))
     stop("missing input or output")
-  arguments <- paste(input, "--output", output)
-  system2(Sys.getenv("MJML"), args = arguments)
+
+  if(is.null(path))
+    path <- find_mjml()
+  
+  arguments <- paste(input, "-o", output)
+  system2(path, args = arguments)
   output
 }
 
 #' @rdname save
 #' @export
-mj_save <- function(mjml, output, ...){
+mj_save <- function(mjml, output, ..., path = NULL){
   if(missing(mjml) || missing(output))
     stop("missing mjml or output")
+  if(is.null(path))
+    path <- find_mjml()
   temp_mjml <- tempfile(fileext = ".mjml")
   out <- mj_save_mjml(mjml, temp_mjml)
-  output <- mj_convert_html(out, output)
+  output <- mj_convert_html(temp_mjml, output, path = path)
   unlink("temp_mjml", recursive = TRUE)
   output
 }
 
-#' Setup
+#' Install & Find
 #'
-#' Set path to MJML.
-#'
-#' @param path Path to MJML.
+#' Install or find local installation of MJML.
 #'
 #' @examples
 #' \dontrun{
@@ -153,18 +160,19 @@ mj_save <- function(mjml, output, ...){
 #'
 #' @rdname set
 #' @export
-mj_set <- function(path){
-  Sys.setenv("MJML" = path)
-}
-
-#' @rdname set
-#' @export
-mj_get <- function(){
-  Sys.getenv("MJML")
-}
-
-#' @rdname set
-#' @export
 install_mjml <- function(){
 	system2("npm", args = "install mjml --global")
+}
+
+
+#' Find MJML
+#' 
+#' Attempts to find the path to MJML
+#' 
+#' @export
+find_mjml <- function(){
+  path <- Sys.which("mjml")
+  if(path == "")
+    stop("Cannot find path mjml, see `install_mjml`")
+  return(path)
 }

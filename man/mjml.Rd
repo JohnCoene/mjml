@@ -3,7 +3,6 @@
 \docType{package}
 \name{mjml}
 \alias{mjml}
-\alias{mjml-package}
 \title{mjml: A package for building and sending responsive emails.}
 \description{
 The package provides an API to all \href{mjml}{https://mjml.io} tags.
