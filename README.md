@@ -63,9 +63,9 @@ email <- mj_ml(
       mj_section(
         mj_column(
           mj_image(
-						paste0(
-							"https://www.r-project.org/Rlogo.png"
-						)
+            paste0(
+              "https://www.r-project.org/Rlogo.png"
+            )
           )
         )
       )
