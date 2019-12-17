@@ -4,12 +4,14 @@
 \alias{mj_social}
 \title{Social}
 \usage{
-mj_social(display, ...)
+mj_social(mode = "horizontal", ...)
 }
 \arguments{
-\item{display}{icon to display.}
+\item{mode}{Display mode.}
 
 \item{...}{Unnamed items that comprise this list of MJML tags.}
+
+\item{name}{Name of social element, e.g.: \code{facebook}.}
 }
 \description{
 Displays calls-to-action for various social networks with their associated logo.

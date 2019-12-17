@@ -4,7 +4,8 @@
 #' You can activate/deactivate any icon, with \code{display} property.
 #'
 #' @inheritParams mj_ml
-#' @param display icon to display.
+#' @param mode Display mode.
+#' @param name Name of social element, e.g.: \code{facebook}.
 #'
 #' @examples
 #' mj_ml(
@@ -15,11 +16,17 @@
 #'
 #' @seealso \href{official documentation}{https://mjml.io/documentation/#mjml-social}
 #'
+#' @name mj_social
 #' @export
-mj_social <- function(display, ...){
-  if(missing(display))
-    stop("missing display")
-  htmltools::tag("mj-social", list(display = display, ...))
+mj_social <- function(mode = "horizontal", ...){
+  htmltools::tag("mj-social", list(mode = mode, ...))
+}
+
+#' @export
+mj_social_element <- function(name, ...){
+  if(missing(name))
+    stop("missing name")
+  htmltools::tag("mj-social-element", list(name = name, ...))
 }
 
 #' Image
