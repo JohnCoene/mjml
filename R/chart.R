@@ -21,7 +21,6 @@
 #' @seealso \href{official documentation}{https://github.com/image-charts/mjml-chart}
 #'
 #' @export
-mj_chart <- function(cht = c("bvg", "p"), ...){
-  cht <- match.arg(cht)
+mj_chart <- function(cht = "bvg", ...){
   htmltools::tag("mj-chart", list(cht = cht, ...))
 }
