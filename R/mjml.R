@@ -168,6 +168,9 @@ mj_save_mjml <- function(mjml, output){
 #'
 #' Install or find local installation of MJML.
 #'
+#' @details \code{install_mjml_chart} is required for
+#' \code{\link{mj_chart}}.
+#' 
 #' @examples
 #' \dontrun{
 #' install_mjml()
@@ -179,6 +182,11 @@ install_mjml <- function(){
 	system2("npm", args = "install mjml --global")
 }
 
+#' @rdname set
+#' @export
+install_mjml_chart <- function(){
+	system2("npm", args = "install mjml-chart@5 --global")
+}
 
 #' Find MJML
 #' 

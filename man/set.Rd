@@ -2,12 +2,19 @@
 % Please edit documentation in R/mjml.R
 \name{install_mjml}
 \alias{install_mjml}
+\alias{install_mjml_chart}
 \title{Install & Find}
 \usage{
 install_mjml()
+
+install_mjml_chart()
 }
 \description{
 Install or find local installation of MJML.
+}
+\details{
+\code{install_mjml_chart} is required for
+\code{\link{mj_chart}}.
 }
 \examples{
 \dontrun{

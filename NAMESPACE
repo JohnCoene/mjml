@@ -3,6 +3,7 @@
 export("%>%")
 export(find_mjml)
 export(install_mjml)
+export(install_mjml_chart)
 export(mj_accordion)
 export(mj_accordion_element)
 export(mj_accordion_text)
