@@ -62,8 +62,9 @@ mj_include <- function(...){
 #'
 #' @section Functions:
 #' \itemize{
-#'   \item{\code{mj_convert} }{Convert to \code{.html}}
-#'   \item{\code{mj_validate_mjml} }{Validate \code{.mjml} file}
+#'   \item{\code{mj_convert} }{Convert to \code{.html}.}
+#'   \item{\code{mj_validate_mjml} }{Validate \code{.mjml} file.}
+#'   \item{\code{mj_sendmailr} }{Convert mjml to sendmailR mimepart.}
 #' }
 #'
 #' @examples
@@ -131,6 +132,15 @@ mj_validate_mjml <- function(input, path = NULL){
   arguments <- paste("--validate", input)
   system2(path, args = arguments)
   input
+}
+
+#' @rdname save
+#' @export
+mj_sendmailr <- function(mjml, path = NULL){
+  email <- mj_convert(mjml)
+  email <- sendmailR::mime_part(email)
+  email[["headers"]][["Content-Type"]] <- "text/html"
+  return(email)
 }
 
 mj_convert_html <- function(input, output, path = NULL){

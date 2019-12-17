@@ -12,3 +12,4 @@ Imports:
     magrittr,
     rstudioapi
 RoxygenNote: 7.0.2
+Suggests: sendmailR

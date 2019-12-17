@@ -33,7 +33,7 @@ mj_view <- function(mjml){
   unlink("temp_mjml", recursive = TRUE)
   viewer <- getOption("viewer")
   if(is.null(rstudioapi::isAvailable())){
-    cat("RStudio not running")
+    cat("RStudio is not running\n")
     return()
   }
   

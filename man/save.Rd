@@ -4,11 +4,14 @@
 \alias{save}
 \alias{mj_convert}
 \alias{mj_validate_mjml}
+\alias{mj_sendmailr}
 \title{Save}
 \usage{
 mj_convert(mjml, output = NULL, path = NULL)
 
 mj_validate_mjml(input, path = NULL)
+
+mj_sendmailr(mjml, path = NULL)
 }
 \arguments{
 \item{mjml}{MJML email as returned by \code{\link{mj_ml}}.}
@@ -29,8 +32,9 @@ Save your email with \code{.mjml} extension.
 \section{Functions}{
 
 \itemize{
-  \item{\code{mj_convert} }{Convert to \code{.html}}
-  \item{\code{mj_validate_mjml} }{Validate \code{.mjml} file}
+  \item{\code{mj_convert} }{Convert to \code{.html}.}
+  \item{\code{mj_validate_mjml} }{Validate \code{.mjml} file.}
+  \item{\code{mj_sendmailr} }{Convert mjml to sendmailR mimepart.}
 }
 }
 
