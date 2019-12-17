@@ -1,6 +1,6 @@
 Package: mjml
 Title: Create Responsive Emails
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
 Description: Create responsive emails with 'MJML'.
 License: MIT + file LICENSE
@@ -11,4 +11,4 @@ Imports:
     knitr,
     magrittr,
     rstudioapi
-RoxygenNote: 7.0.0
+RoxygenNote: 7.0.2

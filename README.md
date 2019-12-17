@@ -73,8 +73,8 @@ email <- mj_ml(
   )
 )
 
-# save the email
-mj_save(email, "email.html")
+# convert to html
+html <- mj_convert(email)
 ```
 
 Send email with [sendmailR](https://CRAN.R-project.org/package=sendmailR).
@@ -82,8 +82,7 @@ Send email with [sendmailR](https://CRAN.R-project.org/package=sendmailR).
 ```r
 library(sendmailR)
 
-message <- readLines("email.html")
-msg <- mime_part(message)
+msg <- mime_part(html)
 msg[["headers"]][["Content-Type"]] <- "text/html"
 
 sendmail(
