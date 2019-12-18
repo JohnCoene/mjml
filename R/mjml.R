@@ -211,6 +211,7 @@ find_mjml <- function(){
 #' @name find_mjml
 #' @export
 set_mjml_path <- function(path){
+  path <- normalizePath(path)
   options(MJML_PATH = path)
   invisible()
 }
