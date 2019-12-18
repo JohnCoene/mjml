@@ -265,6 +265,10 @@ mj_spacer <- function(...){
 #' This tag allows you to display table and filled it with data.
 #'
 #' @param df a \code{data.frame}.
+#' @param colnames Column names, if \code{NULL} then names are
+#' taken from the \code{df}.
+#' @param ... Additional options to pass to table.
+#' @param head_style,row_style Rows and header CSS styles.
 #'
 #' @examples
 #' mj_ml(
@@ -278,9 +282,30 @@ mj_spacer <- function(...){
 #' @seealso \href{official documentation}{https://mjml.io/documentation/#mjml-table}
 #'
 #' @export
-mj_table <- function(df){
-  htmltools::tag("ml-table", list(
-    knitr::kable(df, format = "html")
+mj_table <- function(df, ..., colnames = NULL, head_style = NULL, row_style = NULL){
+  
+  head <- colnames
+  if(is.null(colnames))
+    head <- names(df)
+  
+  rownames(df) <- NULL
+  data <- apply(df, 1, as.list)
+
+  table_values <- purrr::map(data, function(r){
+    row <- purrr::map(r, function(c){
+      htmltools::tags$td(c)
+    })
+
+    htmltools::tags$tr(row, style = row_style)
+  })
+
+  table_head <- purrr::map(head, function(x){htmltools::tags$th(x)})
+  table_head <- htmltools::tags$tr(table_head, style = head_style)
+
+  table <- htmltools::tagList(table_head, table_values)
+
+  htmltools::tag("mj-table", list(
+    table, ...
   ))
 }
 

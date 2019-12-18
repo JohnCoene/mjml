@@ -4,10 +4,17 @@
 \alias{mj_table}
 \title{Table}
 \usage{
-mj_table(df)
+mj_table(df, ..., colnames = NULL, head_style = NULL, row_style = NULL)
 }
 \arguments{
 \item{df}{a \code{data.frame}.}
+
+\item{...}{Additional options to pass to table.}
+
+\item{colnames}{Column names, if \code{NULL} then names are
+taken from the \code{df}.}
+
+\item{head_style, row_style}{Rows and header CSS styles.}
 }
 \description{
 This tag allows you to display table and filled it with data.

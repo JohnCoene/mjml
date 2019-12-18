@@ -22,6 +22,7 @@ mj_social <- function(mode = "horizontal", ...){
   htmltools::tag("mj-social", list(mode = mode, ...))
 }
 
+#' @rdname mj_social
 #' @export
 mj_social_element <- function(name, ...){
   if(missing(name))

@@ -2,9 +2,12 @@
 % Please edit documentation in R/icon.R
 \name{mj_social}
 \alias{mj_social}
+\alias{mj_social_element}
 \title{Social}
 \usage{
 mj_social(mode = "horizontal", ...)
+
+mj_social_element(name, ...)
 }
 \arguments{
 \item{mode}{Display mode.}
