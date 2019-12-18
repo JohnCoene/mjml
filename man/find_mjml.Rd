@@ -2,9 +2,15 @@
 % Please edit documentation in R/mjml.R
 \name{find_mjml}
 \alias{find_mjml}
+\alias{set_mjml_path}
 \title{Find MJML}
 \usage{
 find_mjml()
+
+set_mjml_path(path)
+}
+\arguments{
+\item{path}{Path to mjml}
 }
 \description{
 Attempts to find the path to MJML

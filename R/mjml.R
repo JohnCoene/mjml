@@ -192,10 +192,25 @@ install_mjml_chart <- function(){
 #' 
 #' Attempts to find the path to MJML
 #' 
+#' @param path Path to mjml
+#' 
+#' @name find_mjml
 #' @export
 find_mjml <- function(){
   path <- Sys.which("mjml")
-  if(path == "")
+  if(path == ""){
+    opt <- getOption("MJML_PATH")
+    if(!is.null(opt))
+      return(opt)
+    
     stop("Cannot find path mjml, see `install_mjml`")
+  }
   return(path)
+}
+
+#' @name find_mjml
+#' @export
+set_mjml_path <- function(path){
+  options(MJML_PATH = path)
+  invisible()
 }
