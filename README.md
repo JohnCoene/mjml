@@ -26,6 +26,12 @@ library(mjml)
 install_mjml()
 ```
 
+If the installation is successful the following should work.
+
+```r
+mjml::find_mjml()
+```
+
 ## Templates
 
 Insert templates with RStudio addin.
@@ -38,7 +44,7 @@ Insert templates with RStudio addin.
 
 ## Example
 
-See installation.
+load the library then use then build an email using the mjml tags, similar to htmltools.
 
 ```r
 library(mjml)
@@ -74,7 +80,7 @@ email <- mj_ml(
 )
 ```
 
-Send email with [sendmailR](https://CRAN.R-project.org/package=sendmailR).
+Send email with [sendmailR](https://CRAN.R-project.org/package=sendmailR), the convenience function `mj_sendmailr` converts the mjml tags into a html read in R.
 
 ```r
 library(sendmailR)
